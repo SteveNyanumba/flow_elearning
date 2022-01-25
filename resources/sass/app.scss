@@ -1,0 +1,99 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap-icons/font/bootstrap-icons.css';
+$enable-negative-margins: true;
+
+//Fontawesome
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+@import '~@fortawesome/fontawesome-free/scss/v4-shims.scss';
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+
+
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        @each $prop, $abbrev in (width: w, height: h) {
+            @each $size, $length in $sizes {
+                .#{$abbrev}#{$infix}-#{$size} { #{$prop}: $length !important; }
+            }
+        }
+    }
+}
+
+//extras
+@import '~glightbox/dist/css/glightbox.css';
+@import '~swiper/swiper.scss';
+
+
+// Custom
+@import "custom";
+//ADMIN LTE3
+@import '~admin-lte/dist/css/adminlte.min.css';
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active{
+    background-color: #fb9921 !important ;
+    color: black !important;
+}
+
+.sidebar-dark-primary{
+    background-color: #153040 !important;
+    .nav-link{
+        background-color: #1f476277;
+        .nav-link:hover{
+            background-color: #1f4762 !important;
+        }
+    }
+}
+.sidebar-dark-primary-lec{
+    background-color: #154029 !important;
+    .nav-sidebar{
+        .nav-item{
+            .nav-link{
+                background-color: #15402974;
+            }
+            .nav-link:hover{
+                background-color: #fb9921 !important ;
+                color: black !important;
+            }
+            .nav-link.active{
+                background-color: #fb9921 !important ;
+                color: black !important;
+            }
+        }
+    }
+}
+.sidebar-dark-primary-stud{
+    background-color: #401515 !important;
+    .nav-sidebar{
+        .nav-item{
+            .nav-link{
+                background-color: #40151574;
+            }
+            .nav-link:hover{
+                    background-color: #fb9921 !important ;
+                    color: black !important;
+
+            }
+            .nav-link.active{
+                background-color: #fb9921 !important ;
+                color: black !important;
+            }
+        }
+    }
+}
+
+
+
+
+
+// Video JS
+@import '~video.js/src/css/vjs.scss';
